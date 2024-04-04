@@ -26,11 +26,16 @@ function createTaskCard(task) {
 
 // Todo: create a function to render the task list and make cards draggable
 function makeDraggable() {
-  $('.draggable').draggable({
-    containment: '#cardsContainer',
-    scroll: false
-  });
+  $('.drag').draggable({
+    revert: "invalid", 
+    stack: ".container"});
+  $('.drop').droppable({classes: {
+    "drop": "highlight"
+  }
+})
 }
+
+
 function renderTaskList() {
 
 }
@@ -64,14 +69,14 @@ $(document).ready(function(){
       let description = $('#description').val();
       
       // Creating a new card
-      let cardHtml = '<div class="card mt-3">';
+      let cardHtml = '<div class="card drag mt-3">';
       cardHtml += '<div class="card-body">';
       cardHtml += '<h5 class="card-title">' + title + '</h5>';
       cardHtml += '<h6 class="card-subtitle mb-2 text-muted">' + date + '</h6>';
       cardHtml += '<p class="card-text">' + description + '</p>';
       cardHtml += '</div></div>';
       
-      $('#cardsContainer').append(cardHtml);
+      $('#todo-cards').append(cardHtml);
       
       // Clearing form inputs
       $('#title').val('');
@@ -80,7 +85,7 @@ $(document).ready(function(){
       
       $('#exampleModal').modal('hide');
 
-      // 
+      
       makeDraggable();
     });
   });
