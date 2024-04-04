@@ -22,7 +22,7 @@
   </header>
   <div class="container">
     <div class="text-center mb-5">
-      <button id="addTask" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
+      <button id="addTask" class="btn btn-success" >Add Task</button>
     </div>
     <!-- Todo: Create a modal with a form to add tasks -->
 
@@ -30,7 +30,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New Card</h5>
+            <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -43,7 +43,7 @@
               </div>
               <div class="form-group">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" id="datepicker" required>
+                <input type="text" class="form-control" id="datepicker" required>
               </div>
               <div class="form-group">
                 <label for="description">Description</label>
@@ -52,14 +52,17 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" id="saveCardBtn" class="btn btn-success">Add Task</button>
+            <button type="button" class="close btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="saveCardBtn" class=" btn btn-success">Add Task</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- End modal insertion -->
+    <!-- card -->
+    <div id="cardContainer"></div>
+
 
     <div class="row swim-lanes text-center justify-content-between">
       <div class="col-12 col-lg-4 d-flex">

@@ -3,6 +3,16 @@ let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 $( "#datepicker" ).datepicker();
 
+// close button for modal
+$('.close').on('click', function() {
+  $('#exampleModal').modal('hide');
+        // Clearing form inputs
+        $('#title').val('');
+        $('#date').val('');
+        $('#description').val('');
+        
+        $('#exampleModal').modal('hide');
+});
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
@@ -15,6 +25,12 @@ function createTaskCard(task) {
 }
 
 // Todo: create a function to render the task list and make cards draggable
+function makeDraggable() {
+  $('.draggable').draggable({
+    containment: '#cardsContainer',
+    scroll: false
+  });
+}
 function renderTaskList() {
 
 }
@@ -43,12 +59,12 @@ $(document).ready(function(){
     });
   
     $('#saveCardBtn').click(function(){
-      var title = $('#title').val();
-      var date = $('#date').val();
-      var description = $('#description').val();
+      let title = $('#title').val();
+      let date = $('#date').val();
+      let description = $('#description').val();
       
       // Creating a new card
-      var cardHtml = '<div class="card mt-3">';
+      let cardHtml = '<div class="card mt-3">';
       cardHtml += '<div class="card-body">';
       cardHtml += '<h5 class="card-title">' + title + '</h5>';
       cardHtml += '<h6 class="card-subtitle mb-2 text-muted">' + date + '</h6>';
@@ -63,5 +79,8 @@ $(document).ready(function(){
       $('#description').val('');
       
       $('#exampleModal').modal('hide');
+
+      // 
+      makeDraggable();
     });
   });
