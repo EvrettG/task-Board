@@ -60,7 +60,7 @@ $(document).ready(function(){
   
     $('#saveCardBtn').click(function(){
       let title = $('#title').val();
-      let date = $('#date').val();
+      let date = $('#datepicker').val();
       let description = $('#description').val();
       
       // Creating a new card
