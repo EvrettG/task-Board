@@ -26,12 +26,12 @@ function createTaskCard(task) {
 
 // Todo: create a function to render the task list and make cards draggable
 function makeDraggable() {
+  $(".sortable-list").sortable();
   $('.drag').draggable({
     revert: "invalid", 
     stack: ".container"});
-  $('.drop').droppable({classes: {
-    "drop": "highlight"
-  }
+  $('.drop').droppable({
+    classes: {"drop": "highlight"}
 })
 }
 
