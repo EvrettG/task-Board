@@ -2,6 +2,9 @@
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 $( "#datepicker" ).datepicker();
+const toDo = $('#todo-cards');
+const inProgress = $('#in-progress-cards');
+const done = $('#done-cards')
 
 // close button for modal
 $('.close').on('click', function() {
@@ -72,7 +75,7 @@ $(document).ready(function(){
       let description = $('#description').val();
       
       // Creating a new card
-      let cardHtml = '<div class="card drag mt-3 w-50">';
+      let cardHtml = '<div class="card drag mt-3 w-50 task-card">';
       cardHtml += '<div class="card-body">';
       cardHtml += '<h5 class="card-title">' + title + '</h5>';
       cardHtml += '<h6 class="card-subtitle mb-2 text-muted">' + date + '</h6>';
@@ -92,3 +95,4 @@ $(document).ready(function(){
       makeDraggable();
     });
   });
+
