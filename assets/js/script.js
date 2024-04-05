@@ -31,9 +31,12 @@ function makeDraggable() {
     revert: "invalid", 
     stack: ".container"});
   $('.drop').droppable({
-    classes: {"drop": "highlight"}
-})
+   
+    
+  });
 }
+
+
 
 
 function renderTaskList() {
@@ -69,7 +72,7 @@ $(document).ready(function(){
       let description = $('#description').val();
       
       // Creating a new card
-      let cardHtml = '<div class="card drag mt-3">';
+      let cardHtml = '<div class="card drag mt-3 w-50">';
       cardHtml += '<div class="card-body">';
       cardHtml += '<h5 class="card-title">' + title + '</h5>';
       cardHtml += '<h6 class="card-subtitle mb-2 text-muted">' + date + '</h6>';
