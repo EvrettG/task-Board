@@ -9,6 +9,9 @@ body {
 
 .task-card {
   margin: 0 auto;
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: solid black 2px;
 }
 
 .task-card:hover {
