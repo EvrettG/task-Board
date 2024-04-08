@@ -92,8 +92,17 @@ $(document).ready(function(){
     //creates task on valid save 
     $('#saveTaskBtn').click(function(){
       let title = $('#title').val();
+      if (title= ''){
+        alert('Please enter a valid title')
+      }
       let date = $('#datepicker').val();
+      if (date= ''){
+        alert('Please enter a valid date')
+      }
       let description = $('#description').val();
+      if (description= ''){
+        alert('Please enter a valid description')
+      }
       
       // Creating a new card
       let taskHtml = '<div class="task drag mt-3 w-50 task-card"><h4>' + title + '</h4><p>' + date + '</p><p>' + description + '</p><button class="deleteBtn">Delete</button></div>';
